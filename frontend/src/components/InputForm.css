@@ -57,3 +57,14 @@
     margin-bottom: 1rem;
   }
   
+  .app-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 3rem 1rem;
+  }
+  
+  .form-card {
+    margin-right: 3rem;
+  }
+  

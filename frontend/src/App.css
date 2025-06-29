@@ -50,7 +50,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: 3rem 1rem;
+  padding: 6rem 1rem;
 }
 
 .form-card {
@@ -61,11 +61,14 @@ body {
   max-width: 800px;
   width: 100%;
   box-shadow: 0 0 20px rgba(0, 0, 50, 0.3);
+  margin-right: 3rem;
+  padding-right: 5rem;
 }
 
 .form-card h2 {
   margin-bottom: 0.5rem;
   color: #ffffff;
+  margin-right: 3rem;
 }
 
 .form-card p {

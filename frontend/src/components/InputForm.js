@@ -45,7 +45,7 @@ export default function InputForm() {
       {response && (
         <div className="response-box">
           <h3>📘 Generated Questions & Answers</h3>
-          <pre>{response}</pre>
+          <pre>{response.replace(/\*\*/g, "")}</pre>
         </div>
       )}
     </div>
