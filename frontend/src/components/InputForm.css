@@ -1,0 +1,59 @@
+.input-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  textarea {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    resize: vertical;
+    font-size: 1rem;
+    background: #f3f4f9;
+    color: #333;
+  }
+  
+  .grade-select {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  select {
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: none;
+  }
+  
+  button {
+    padding: 0.8rem;
+    background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+    color: white;
+    border: none;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  button:hover {
+    background: linear-gradient(90deg, #8e2de2 0%, #4a00e0 100%);
+  }
+  
+  .response-box {
+    margin-top: 2rem;
+    background-color: #1e1f3b;
+    padding: 1.5rem;
+    border-radius: 10px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+  }
+  
+  .response-box h3 {
+    color: #a9b4ff;
+    margin-bottom: 1rem;
+  }
+  

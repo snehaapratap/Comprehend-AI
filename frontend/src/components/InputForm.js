@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./InputForm.css";
 
 export default function InputForm() {
   const [passage, setPassage] = useState("");
@@ -8,30 +9,42 @@ export default function InputForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await axios.post("http://127.0.0.1:8000/generate", {
-      passage,
-      grade_level: parseInt(grade),
-    });
-    setResponse(res.data.questions);
+    setResponse("⏳ Generating questions...");
+    try {
+      const res = await axios.post("http://127.0.0.1:8000/generate", {
+        passage,
+        grade_level: parseInt(grade),
+      });
+      setResponse(res.data.questions);
+    } catch (err) {
+      setResponse("❌ Error generating questions. Please check server.");
+    }
   };
 
   return (
-    <div>
+    <div className="input-form">
       <form onSubmit={handleSubmit}>
-        <textarea rows="8" cols="60" value={passage} onChange={e => setPassage(e.target.value)} placeholder="Paste your passage here" />
-        <br />
-        <label>
-          Grade Level:
-          <select value={grade} onChange={e => setGrade(e.target.value)}>
-            {[...Array(12).keys()].map(i => <option key={i+1}>{i+1}</option>)}
+        <textarea
+          rows="8"
+          placeholder="Paste your passage here..."
+          value={passage}
+          onChange={(e) => setPassage(e.target.value)}
+          required
+        />
+        <div className="grade-select">
+          <label>Grade Level: </label>
+          <select value={grade} onChange={(e) => setGrade(e.target.value)}>
+            {[...Array(12)].map((_, i) => (
+              <option key={i}>{i + 1}</option>
+            ))}
           </select>
-        </label>
-        <br />
-        <button type="submit">Generate Questions</button>
+        </div>
+        <button type="submit">✨ Generate Questions</button>
       </form>
+
       {response && (
-        <div>
-          <h3>Generated Questions & Answers</h3>
+        <div className="response-box">
+          <h3>📘 Generated Questions & Answers</h3>
           <pre>{response}</pre>
         </div>
       )}
