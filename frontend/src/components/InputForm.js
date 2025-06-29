@@ -8,7 +8,7 @@ export default function InputForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await axios.post("http://localhost:8000/generate", {
+    const res = await axios.post("http://127.0.0.1:8000/generate", {
       passage,
       grade_level: parseInt(grade),
     });
