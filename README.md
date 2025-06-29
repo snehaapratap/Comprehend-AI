@@ -81,8 +81,8 @@ ai-comprehension-app/
 ### 1️⃣ Clone Repository
 
 ```bash
-git clone https://github.com/snehaapratap/comprehend-ai.git
-cd comprehend-ai
+git clone https://github.com/snehaapratap/Comprehend-AI.git
+cd Comprehend-AI
 ```
 
 ---
